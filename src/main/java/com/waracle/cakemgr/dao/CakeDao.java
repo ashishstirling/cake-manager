@@ -24,4 +24,8 @@ public class CakeDao {
         return em.createQuery("SELECT c FROM Cake c", Cake.class).getResultList();
     }
 
+    public int truncate() {
+        return em.createQuery("DELETE FROM Cake").executeUpdate();
+    }
+
 }
