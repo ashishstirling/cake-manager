@@ -14,7 +14,8 @@ function populateCakeTable() {
                 $('#cakeTable > tbody:last-child').append(
                     '<tr><td>' + element.title + '</td><td>'
                                + element.desc + '</td><td>'
-                               + '<img src="' + element.image + '" alt="' + element.title + '" class="img-thumbnail" width="200" height="200">' + '</td></tr>'
+                               + '<img src="' + element.image + '" class="img-thumbnail" onerror="this.onerror=null; this.src=\'image-not-found.jpg\'" width="100" height="100">'
+                    + '</td></tr>'
                 );
             });
         }
