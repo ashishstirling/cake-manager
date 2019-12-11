@@ -80,7 +80,7 @@ mvnw spring-boot:run
 * http://localhost:8080 has a "New Cake" button. Clicking on that will take the user to http://localhost:8080/newcake.html - user can create a new cake here
 
 Containerization:
-I have added Dockerfile to the project to run the spring-boot application within a Docker container. In order to use this at your end, please do the following:
+* I have added Dockerfile to the project to run the spring-boot application within a Docker container. In order to use this at your end, please do the following:
 * At terminal window, change directory to the project folder (please ensure that you shutdown the application started above first)
 ```
 docker build -t spring-boot-app:latest .
