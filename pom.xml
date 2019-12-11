@@ -92,6 +92,10 @@
 						<goals>
 							<goal>repackage</goal>
 						</goals>
+						<configuration>
+							<mainClass>com.waracle.cakemgr.CakemgrApplication</mainClass>
+							<outputDirectory>${project.basedir}/docker</outputDirectory>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>

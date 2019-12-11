@@ -57,6 +57,7 @@ Process adopted:
         * savecake() then makes an AJAX POST call to /cakes with JSON representing the new cake
         * Upon success, savecake() forwards the control back to index.html which loads the list of cakes and displays it
     * Once the project was tested, was building and was running locally as expected, I proceeded to circleci.com to enable continuous integration
+    * Create Docker container for the application
 
 URLs:
 * Project github: https://github.com/ashishstirling/cake-manager
@@ -65,6 +66,7 @@ URLs:
 Bonus features implemented:
 * Tests
 * Continuous Integration via any cloud CI system
+* Containerization
 
 To run:
 * git clone project to local computer from https://github.com/ashishstirling/cake-manager.git
@@ -76,3 +78,13 @@ mvnw spring-boot:run
 * Next, visit http://localhost:8080 to view list of cakes
 * Visiting http://localhost:8080/cakes will display list of cakes in JSON format as per requirements
 * http://localhost:8080 has a "New Cake" button. Clicking on that will take the user to http://localhost:8080/newcake.html - user can create a new cake here
+
+Containerization:
+I have added Dockerfile to the project to run the spring-boot application within a Docker container. In order to use this at your end, please do the following:
+* At terminal window, change directory to the project folder (please ensure that you shutdown the application started above first)
+```
+docker build -t spring-boot-app:latest .
+docker run -d -p 8080:8080 spring-boot-app:latest
+```
+* This will build the container with name spring-boot-app and will run an image of it
+* You can visit http://localhost:8080 and view the application as before
